@@ -1,137 +1,19 @@
-![Netlify Next.js Blog Template designed by Bejamas](https://user-images.githubusercontent.com/43764894/223762618-62742b4e-9424-44a7-8e85-9f7e4e19db54.png)
-
-
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-blog-theme)
-
-
-A customizable blog starter using:
-
-- [Next.js](https://github.com/vercel/next.js) v12
-- [Tailwind](https://tailwindcss.com/) v3.0
-- Built-in [MDX](https://mdxjs.com/) v1 support
-- Includes modern design with dark & light themes
-
-![Preview of blog theme. Author named Jay Doe and blog's name is "Next.js Blog Theme" with one blog post](nextjs-blog-theme-preview.png)
-
-[Take a gander at the demo.](https://bejamas-nextjs-blog.netlify.app)
-
-[Click here to watch the template walkthrough!](https://www.youtube.com/watch?v=63QZHs259dY)
-
-## Table of Contents:
-
-- [Getting Started](#getting-started)
-  - [Setting Up Locally](#setting-up-locally)
-  - [Using the Wizard](#using-the-setup-wizard)
-- [Configuring the Blog](#configuring-the-blog)
-- [Adding New Posts](#adding-new-posts)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-
-## Getting Started
-
----
-
-You can get started with this project in two ways: locally or using the [setup wizard](https://nextjs-wizard.netlify.app/).
-
-### Setting Up Locally
-
-If you're doing it locally, start with clicking the [use this template](https://github.com/netlify-templates/nextjs-blog-theme/generate) button on GitHub. This will create a new repository with this template's files on your GitHub account. Once that is done, clone your new repository and navigate to it in your terminal.
-
-From there, you can install the project's dependencies by running:
-
-```shell
-yarn install
-```
-
-Finally, you can run your project locally with:
-
-```shell
-yarn run dev
-```
-
-Open your browser and visit <http://localhost:3000>, your project should be running!
-
-### Using the Setup Wizard
-
-![Preview of Setup Wizard showing the initial page of a setup form](nextjs-setup-wizard.png)
-
-Through the [setup wizard](https://nextjs-wizard.netlify.app/), you can create your blog in a few clicks and deploy to Netlify.
-
-## Configuring the blog
-
-The config is based on environment variables to make it easy to integrate with any Jamstack platform, like Netlify.
-
-Here are the variables you can edit:
-| Variable | Description | Options
-| --- | --- | --- |
-| `BLOG_NAME` | the name of your blog, displayed below the avatar ||
-| `BLOG_TITLE` | the main header (`h1`) on the home page ||
-| `BLOG_FOOTER_TEXT`| the text in the footer ||
-| `BLOG_THEME` | the theme to pass to Tailwind | default |
-| `BLOG_FONT_HEADINGS` | the font-family for all HTML headings, from `h1` to `h6`| sans-serif (default), serif, monospace|
-| `BLOG_FONT_PARAGRAPHS` | the font-family for all other HTML elements | sans-serif (default), serif, monospace|
-
-All of the env variables can be configured through the [Wizard](https://nextjs-wizard.netlify.app/) or through setting the project's environment variables. You can do this in your Netlify dashaboard (Site settings/Build & deploy/Environment/Environment variables).
-
-https://user-images.githubusercontent.com/3611928/153997545-6dcdeef0-e570-49e7-93d6-ce0d393d16c9.mp4
-
-[alt: video walkthrough of editing env vars]
-
-If setting an environment variable isn't your cup of tea, the defaults can be changed in [`utils/global-data.js`](/utils/global-data.js). You can also remove the variables and hard code blog information where these variables are used in the code base.
-
-- `BLOG_THEME, BLOG_FONT_HEADINGS, & BLOG_FONT_PARAGRAPHS` are used in [`tailwind-preset.js`](tailwind-preset.js)
-- `BLOG_NAME, BLOG_TITLE, BLOG_FOOTER_TEXT` are used in [`pages/index.js`](pages/index.js) & [`pages/posts/[slug].js`](pages/posts/[slug].js) through the `globalData` object.
-
-## Adding new posts
-
-All posts are stored in `/posts` directory. To make a new post, create a new file with the [`.mdx` extension](https://mdxjs.com/).
-
-Since the posts are written in `MDX` format you can pass props and components. That means you can use [React components](https://reactjs.org/docs/components-and-props.html) inside your posts to make them more interactive. Learn more about how to do so in the [MDX docs on content](https://mdxjs.com/docs/using-mdx/#components).
-
-https://user-images.githubusercontent.com/3611928/152727802-102ec296-41c8-446d-93ed-922d11187073.mp4
-
-[alt: video walkthrough of adding a new blog post]
-
-## Testing
-
-### Included Default Testing
-
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
-
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
-
-If your team is not interested in this tooling, you can remove them with ease!
-
-### Removing Renovate
-
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
-
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-
-```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
--  [plugins.inputs]
--    enable = false
-```
-
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
-
-```bash
-npm uninstall -D netlify-plugin-cypress
-```
-
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
-
-```bash
-npm uninstall cypress
-```
+<p style="text-align: justify;">The world of <strong>graphic design</strong> is a constantly evolving one. A field that has helped shape society and culture over the last few decades, it offers you the opportunity to become a part of something bigger than yourself. The sky&rsquo;s the limit when it comes to what you can achieve with this profession!</p>
+<h2 style="text-align: justify;"><strong>Design is a field that is constantly evolving</strong></h2>
+<p style="text-align: justify;">Design is a field that is constantly evolving. If you want to be successful in this career, you will need to keep up with the latest trends and know how they can be applied to your work by taking <strong><a title="Best Graphic Design Courses" href="https://arenaanimationahmedabad.com/courses/graphics-design/">Best Graphic Design Courses</a></strong> in Ahmedabad. This means learning new software and techniques, as well as being able to adapt when new technologies become available. In addition, being able to work in multiple mediums can help expand your skill set and broaden your options when applying for jobs or going freelance.</p>
+<p style="text-align: justify;">The best way to stay current with the latest trends in sign making is by attending conferences and trade shows. These events are great opportunities to network with others in your field and learn new skills firsthand. They can also be a good source of inspiration for new ideas, which can help keep you motivated and inspired when working on projects.</p>
+<h3 style="text-align: justify;"><strong>Graphic design courses offer a variety of career options</strong></h3>
+<p style="text-align: justify;"><strong>Graphic design</strong> is a broad field that offers numerous career options. <strong>Graphic designers</strong> can work in industries such as advertising, publishing and entertainment, as well as business-to-business marketing and communications.</p>
+<p style="text-align: justify;"><img title="Best Graphic Design Courses" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWglkskzTFdQjYzSAuTDXrThaB03FuqISSZCW0Hl3qsn86R2kUBK9H47VsKmHzC82viJsy9uiMxHNdTzrz3BKjIPoC6jxfL4glT8AAxoTBi3CeoO4GZj2_ehkzleq8UGr3yxEagpxcpKANXmRbBQgKlNGvn5aIoQpf_ck3cfuDCoX0MwhFrpuBU_frbA/s710/2.jpg" alt="Best Graphic Design Courses" width="100%" /></p>
+<p style="text-align: justify;"><strong>Graphic designers</strong> have many job options: they can be art directors or copywriters; they might work on branding campaigns or create logos for companies; they might even be responsible for designing the layout of an entire magazine issue!</p>
+<p style="text-align: justify;">You don&rsquo;t need to know exactly what type of job you want when you first start studying graphic design&ndash;instead, focus on gaining skills that will make you marketable regardless of what type of position or industry interests you most.</p>
+<p style="text-align: justify;">As a graphic designer, you will be responsible for creating visual elements that communicate a message. This can include logos, posters, advertisements and websites. You may also be responsible for the layout of an entire magazine issue or book cover design.</p>
+<h3 style="text-align: justify;"><strong>Graphic design can be a lucrative career choice</strong></h3>
+<p style="text-align: justify;">As a graphic designer, you can work in a variety of industries and roles. You can also earn a great salary. Here are some examples:</p>
+<ul style="text-align: justify;">
+<li><strong>Graphic designers</strong> who work in advertising earn an average salary of $52,000 per year.</li>
+<li>Those working in publishing make $51,000 on average each year.</li>
+<li><strong>Graphic designers</strong> who design web sites make between $49-$65k per year depending on experience and location (source).</li>
+</ul>
+<h4 style="text-align: justify;"><strong>Conclusion</strong></h4>
+<p style="text-align: justify;">If you&rsquo;re interested in pursuing a career in graphic design, there are plenty of options available to help you get started. The best way to learn about these <strong><a title="Best web Design Courses in Ahmedabad" href="https://arenaanimationahmedabad.com/courses/web-design/">Best web Design Courses in Ahmedabad</a></strong> is by doing your research and finding out which one will work best for you. You can also ask people who have studied design before what they think about their experience with it!</p>
